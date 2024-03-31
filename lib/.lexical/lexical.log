@@ -1,0 +1,228 @@
+18:57:00.732 [info] Child {LoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.118.0>
+Start Call: Logger.Backends.Watcher.start_link({{LoggerFileBackend, :general_log}, {LoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+18:57:00.732 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.117.0>
+Start Call: Logger.Backends.Supervisor.start_link([{LoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:57:00.732 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:57:00.732 [info] Application logger started at :nonode@nohost
+18:57:01.659 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.1440.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+18:57:01.659 [info] Application runtime_tools started at :nonode@nohost
+18:57:01.661 [info] Application erts started at :nonode@nohost
+18:57:01.661 [info] Application lx_lexical_shared started at :nonode@nohost
+18:57:01.662 [info] Child LXSnowflake.Generator of Supervisor #PID<0.1446.0> (Supervisor.Default) started
+Pid: #PID<0.1447.0>
+Start Call: LXSnowflake.Generator.start_link(1704070800000, 1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:01.662 [info] Application lx_snowflake started at :nonode@nohost
+18:57:01.662 [info] Application lx_sourceror started at :nonode@nohost
+18:57:01.662 [info] Application lx_common started at :nonode@nohost
+18:57:01.662 [info] Application lx_elixir_sense started at :nonode@nohost
+18:57:01.668 [info] Application jason started at :nonode@nohost
+18:57:01.668 [info] Application logger_file_backend started at :nonode@nohost
+18:57:01.668 [info] Application lx_path_glob started at :nonode@nohost
+18:57:01.668 [info] Application lx_proto started at :nonode@nohost
+18:57:01.668 [info] Application lx_protocol started at :nonode@nohost
+18:57:01.677 [info] Child LXical.Document.Store of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1460.0>
+Start Call: LXical.Document.Store.start_link([derive: [analysis: &LXical.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:01.680 [info] Child LXical.Server of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1461.0>
+Start Call: LXical.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:01.680 [info] Child LXical.Server.ProjectSupervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1462.0>
+Start Call: DynamicSupervisor.start_link([name: LXical.Server.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:57:01.680 [info] Child LXical.Server.Provider.Queue.Supervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1463.0>
+Start Call: Task.Supervisor.start_link([name: LXical.Server.Provider.Queue.Supervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:57:01.681 [info] Child LXical.Server.Provider.Queue of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1464.0>
+Start Call: LXical.Server.Provider.Queue.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:01.681 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1465.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:01.681 [info] Application lx_server started at :nonode@nohost
+18:57:01.692 [info] Starting project at uri file:///Users/zoedsoupe/dev/andromeda/andromeda-fie
+18:57:01.704 [info] Child {LXical.Server.Project.Progress, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1467.0>
+Start Call: LXical.Server.Project.Progress.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 30628, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:01.707 [info] Child {LXical.RemoteControl.ProjectNodeSupervisor, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1468.0>
+Start Call: LXical.RemoteControl.ProjectNodeSupervisor.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 30628, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:01.717 [info] Child :erl_epmd of Supervisor :net_sup started
+Pid: #PID<0.1471.0>
+Start Call: :erl_epmd.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+18:57:01.718 [info] Child :auth of Supervisor :net_sup started
+Pid: #PID<0.1472.0>
+Start Call: :auth.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+18:57:01.720 [info] Child :net_kernel of Supervisor :net_sup started
+Pid: #PID<0.1473.0>
+Start Call: :net_kernel.start_link(%{name: :"manager-andromeda_fie-30628@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+18:57:01.720 [info] Child :net_sup_dynamic of Supervisor :kernel_sup started
+Pid: #PID<0.1470.0>
+Start Call: :erl_distribution.start_link(%{name: :"manager-andromeda_fie-30628@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 1000
+Type: :supervisor
+18:57:02.205 [info] Child {LXical.Server.Project.Node, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1469.0>
+Start Call: LXical.Server.Project.Node.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 30628, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:02.208 [info] Child {LXical.Server.Project.Diagnostics, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1481.0>
+Start Call: LXical.Server.Project.Diagnostics.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 30628, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:02.211 [info] Child {LXical.Server.Project.Intelligence, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1482.0>
+Start Call: LXical.Server.Project.Intelligence.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 30628, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:02.213 [info] Child LXical.Server.Project.SearchListener of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1483.0>
+Start Call: LXical.Server.Project.SearchListener.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 30628, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:02.214 [info] Lexical Initialized
+18:57:02.214 [info] opened file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex
+18:57:05.713 [info] Compiled andromeda_fie in 3.5 seconds
+18:57:13.079 [info] Completion for LxPos<<43, 45>>
+18:57:15.091 [info] Completion for LxPos<<43, 49>>
+18:57:15.094 [info] Completion for LxPos<<43, 50>>
+18:57:15.096 [info] Completion for LxPos<<43, 51>>
+18:57:15.103 [info] Emitting completions: []
+18:57:15.830 [info] Local completions are [%LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.Layouts", metadata: %{}, name: "Layouts", summary: ""}]
+18:57:15.834 [info] Local completions are []
+18:57:15.834 [info] Local completions are []
+18:57:15.834 [info] Emitting completions: []
+18:57:15.834 [info] Emitting completions: []
+18:57:15.837 [info] Local completions are []
+18:57:15.837 [info] Emitting completions: []
+18:57:15.838 [info] Emitting completions: [#Protocol.Types.Completion.Item<[label: "Layouts", kind: :module, detail: "AndromedaWeb.Layouts", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 0, dirty?: false, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "Layouts", range: LxRange[<<43, 38>>...<<43, 45>>]}}, sort_text: "0001_Layouts"]>]
+18:57:16.708 [info] Completion for LxPos<<43, 60>>
+18:57:16.757 [info] Local completions are [%LXical.RemoteControl.Completion.Candidate.Module{full_name: "Andromeda", metadata: %{}, name: "Andromeda", summary: "Andromeda keeps the contexts that define your domain\nand business logic."}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb", metadata: %{}, name: "AndromedaWeb", summary: "The entrypoint for defining your web interface, such\nas controllers, components, channels, and so on."}]
+18:57:16.763 [info] Emitting completions: [#Protocol.Types.Completion.Item<[label: "Andromeda", kind: :module, detail: "Andromeda keeps the contexts that define your domain\nand business logic.", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 15, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "Andromeda", range: LxRange[<<43, 53>>...<<43, 60>>]}}, sort_text: "0001_Andromeda"]>, #Protocol.Types.Completion.Item<[label: "AndromedaWeb", kind: :module, detail: "The entrypoint for defining your web interface, such\nas controllers, components, channels, and so on.", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 15, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "AndromedaWeb", range: LxRange[<<43, 53>>...<<43, 60>>]}}, sort_text: "0001_AndromedaWeb"]>]
+18:57:17.901 [info] Completion for LxPos<<43, 66>>
+18:57:17.940 [info] Local completions are [%LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.ConnCase", metadata: %{}, name: "ConnCase", summary: "This module defines the test case to be used by\ntests that require setting up a connection."}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.CoreComponents", metadata: %{}, name: "CoreComponents", summary: "Provides core UI components."}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.Endpoint", metadata: %{}, name: "Endpoint", summary: ""}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.ErrorHTML", metadata: %{}, name: "ErrorHTML", summary: ""}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.ErrorJSON", metadata: %{}, name: "ErrorJSON", summary: ""}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.Layouts", metadata: %{}, name: "Layouts", summary: ""}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.PageController", metadata: %{}, name: "PageController", summary: ""}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.PageHTML", metadata: %{}, name: "PageHTML", summary: ""}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.Router", metadata: %{}, name: "Router", summary: ""}, %LXical.RemoteControl.Completion.Candidate.Module{full_name: "AndromedaWeb.Telemetry", metadata: %{}, name: "Telemetry", summary: ""}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: ["atom"], arity: 1, name: "__info__", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "@spec __info__(:attributes) :: keyword()\n@spec __info__(:compile) :: [term()]\n@spec __info__(:functions) :: [{atom, non_neg_integer}]\n@spec __info__(:macros) :: [{atom, non_neg_integer}]\n@spec __info__(:md5) :: binary()\n@spec __info__(:module) :: module()", summary: "Built-in function", metadata: %{builtin: true}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: [], arity: 0, name: "channel", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "", summary: "", metadata: %{}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: [], arity: 0, name: "controller", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "", summary: "", metadata: %{}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: [], arity: 0, name: "html", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "", summary: "", metadata: %{}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: [], arity: 0, name: "live_component", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "", summary: "", metadata: %{}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: [], arity: 0, name: "live_view", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "", summary: "", metadata: %{}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: [], arity: 0, name: "module_info", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "@spec module_info :: [{:module | :attributes | :compile | :exports | :md5 | :native, term}]", summary: "Built-in function", metadata: %{builtin: true}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: ["key"], arity: 1, name: "module_info", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "@spec module_info(:module) :: atom\n@spec module_info(:attributes | :compile) :: [{atom, term}]\n@spec module_info(:md5) :: binary\n@spec module_info(:exports | :functions | :nifs) :: [{atom, non_neg_integer}]\n@spec module_info(:native) :: boolean", summary: "Built-in function", metadata: %{builtin: true}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: [], arity: 0, name: "router", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "", summary: "", metadata: %{}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: [], arity: 0, name: "static_paths", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "", summary: "", metadata: %{}}, %LXical.RemoteControl.Completion.Candidate.Function{argument_names: [], arity: 0, name: "verified_routes", origin: "AndromedaWeb", type: :function, visibility: :public, spec: "", summary: "", metadata: %{}}]
+18:57:17.984 [info] Emitting completions: [#Protocol.Types.Completion.Item<[label: "ConnCase", kind: :module, detail: "This module defines the test case to be used by\ntests that require setting up a connection.", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "ConnCase", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_ConnCase"]>, #Protocol.Types.Completion.Item<[label: "CoreComponents", kind: :module, detail: "Provides core UI components.", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "CoreComponents", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_CoreComponents"]>, #Protocol.Types.Completion.Item<[label: "Endpoint", kind: :module, detail: "AndromedaWeb.Endpoint", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "Endpoint", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_Endpoint"]>, #Protocol.Types.Completion.Item<[label: "ErrorHTML", kind: :module, detail: "AndromedaWeb.ErrorHTML", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "ErrorHTML", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_ErrorHTML"]>, #Protocol.Types.Completion.Item<[label: "ErrorJSON", kind: :module, detail: "AndromedaWeb.ErrorJSON", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "ErrorJSON", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_ErrorJSON"]>, #Protocol.Types.Completion.Item<[label: "Layouts", kind: :module, detail: "AndromedaWeb.Layouts", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "Layouts", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_Layouts"]>, #Protocol.Types.Completion.Item<[label: "PageController", kind: :module, detail: "AndromedaWeb.PageController", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "PageController", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_PageController"]>, #Protocol.Types.Completion.Item<[label: "PageHTML", kind: :module, detail: "AndromedaWeb.PageHTML", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "PageHTML", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_PageHTML"]>, #Protocol.Types.Completion.Item<[label: "Router", kind: :module, detail: "AndromedaWeb.Router", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "Router", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_Router"]>, #Protocol.Types.Completion.Item<[label: "Telemetry", kind: :module, detail: "AndromedaWeb.Telemetry", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "Telemetry", range: LxRange[<<43, 66>>...<<43, 66>>]}}, sort_text: "0001_Telemetry"]>, #Protocol.Types.Completion.Item<[label: "__info__(atom)", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "Built-in function\n```elixir\n@spec __info__(:attributes) :: keyword()\n@spec __info__(:compile) :: [term()]\n@spec __info__(:functions) :: [{atom, non_neg_integer}]\n@spec __info__(:macros) :: [{atom, non_neg_integer}]\n@spec __info__(:md5) :: binary()\n@spec __info__(:module) :: module()\n```", kind: :markdown]>, detail: "(function)", filter_text: "__info__", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "__info__(${1:atom})", range: LxRange[<<43, 66>>...<<43, 66>>]}}, insert_text_format: :snippet, sort_text: "0209_info__:001"]>, #Protocol.Types.Completion.Item<[label: "channel()", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "\n```elixir\n\n```", kind: :markdown]>, detail: "(function)", filter_text: "channel", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "channel()", range: LxRange[<<43, 66>>...<<43, 66>>]}}, insert_text_format: :snippet, sort_text: "0201_channel:000"]>, #Protocol.Types.Completion.Item<[label: "controller()", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "\n```elixir\n\n```", kind: :markdown]>, detail: "(function)", filter_text: "controller", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "controller()", range: LxRange[<<43, 66>>...<<43, 66>>]}}, insert_text_format: :snippet, sort_text: "0201_controller:000"]>, #Protocol.Types.Completion.Item<[label: "html()", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "\n```elixir\n\n```", kind: :markdown]>, detail: "(function)", filter_text: "html", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "html()", range: LxRange[<<43, 66>>...<<43, 66>>]}}, insert_text_format: :snippet, sort_text: "0201_html:000"]>, #Protocol.Types.Completion.Item<[label: "live_component()", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "\n```elixir\n\n```", kind: :markdown]>, detail: "(function)", filter_text: "live_component", text_edit: %LXical.Document.Changes{document: #LXical.Document<path: "/Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda_web.ex", version: 21, dirty?: true, lines: %Lines<"defmodule AndromedaWeb do..."(111 lines)>, ...>, edits: %LXical.Document.Edit{text: "live_component()", range: LxRange[<<43, 66>>...<<43, 66>>]}}, insert_text_format: :snippet, sort_text: "0201_live_component:000"]>, #Protocol.Types.Completion.Item<[label: "live_view()", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "\n```elixir\n\n```", kind: :markdown]>, detail (truncated)
+18:57:21.188 [info] Compiled andromeda_fie in 166 ms
+18:57:25.773 [error] Shutting down
+18:57:25.774 [warn] Received an Exit notification. Halting the server in 150ms
+18:57:25.774 [info] Child :timer_server of Supervisor :kernel_sup started
+Pid: #PID<0.1491.0>
+Start Call: :timer.start_link()
+Restart: :permanent
+Shutdown: 1000
+Type: :worker
+18:57:25.780 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor terminated
+** (exit) normal
+Pid: #PID<0.1465.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:25.780 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1492.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:25.780 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor terminated
+** (exit) normal
+Pid: #PID<0.1492.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:25.780 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1493.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:25.780 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor terminated
+** (exit) normal
+Pid: #PID<0.1493.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:25.780 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1494.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:25.780 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor terminated
+** (exit) normal
+Pid: #PID<0.1494.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:25.780 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor caused shutdown
+** (exit) :reached_max_restart_intensity
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:57:25.781 [error] Child of Supervisor :standard_error_sup terminated
+** (exit) :epipe
+Pid: #PID<0.52.0>
+Start Module: :standard_error

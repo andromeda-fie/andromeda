@@ -1,0 +1,172 @@
+
+18:57:00.745 [info] Loading 160 CA(s) from :otp store
+
+18:57:00.842 id=0 [debug] handled request client -> server initialize in 63ms
+
+18:57:00.846 [debug] sent notification server -> client window/logMessage
+
+18:57:00.849 id=131 [debug] sent request server -> client client/registerCapability
+
+18:57:00.849 [debug] sent notification server -> client window/logMessage
+
+18:57:00.850 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+18:57:00.854 [debug] sent notification server -> client window/logMessage
+
+18:57:00.856 id=4 [debug] sent request server -> client window/workDoneProgress/create
+
+18:57:00.863 [debug] sent notification server -> client $/progress
+
+18:57:00.873 [debug] sent notification server -> client window/logMessage
+
+18:57:00.873 [info] Beginning DB migration...
+
+18:57:00.876 [debug] sent notification server -> client window/logMessage
+
+18:57:00.876 [info] Database is on the latest version: 6
+
+18:57:00.876 [debug] sent notification server -> client window/logMessage
+
+18:57:00.876 [info] Finished DB migration...
+
+18:57:00.877 [debug] sent notification server -> client window/logMessage
+
+18:57:00.877 [info] Booting runtime for andromeda-fie.
+
+- elixir: /nix/store/wkfisrs4rh8567qzmkarii2hd4h31hhm-elixir-1.16.2/bin/elixir
+- zombie wrapper script: /Users/zoedsoupe/Library/Application Support/.burrito/next_ls_erts-14.2.1_0.20.2/lib/next_ls-0.20.2/priv/cmd
+- working_dir: /Users/zoedsoupe/dev/andromeda/andromeda-fie
+- command: /nix/store/wkfisrs4rh8567qzmkarii2hd4h31hhm-elixir-1.16.2/bin/elixir --no-halt --sname nextls-runtime-1711922220876824875 --cookie VMVGYT3UQDPY4DNMQLGXXZUPBANEI3RBSCZKEELDNREFKM7G3NQA==== -S mix loadpaths --no-compile
+
+Environment: 
+
+LSP=nextls
+NEXTLS_PARENT_PID=g1h3LW5leHQtbHMtMTcxMTkyMjIyMDc1NTc0MzcwOEBab2V5cy1NYWNCb29rLUFpcgAAAQcAAAAAZgncLQ==
+MIX_ENV=dev
+MIX_TARGET=host
+MIX_BUILD_ROOT=.elixir-tools/_build
+ROOTDIR=false
+BINDIR=false
+RELEASE_ROOT=false
+RELEASE_SYS_CONFIG=false
+PATH=/Users/zoedsoupe/Library/Application Support/.burrito/next_ls_erts-14.2.1_0.20.2/bin:/nix/store/pzajj7gw0nazs3vzp6jld53q8ird5izr-coreutils-9.4/bin:/nix/store/9z9k8dwhhiryr7z2pz70zca0vwa15yqc-gnused-4.9/bin:/nix/store/zsm4xd527427rnjfnvfhvsld2n57b822-gnugrep-3.11/bin:/nix/store/hhc2x65zvp89lh15grqk21r6dcvifggy-gawk-5.2.2/bin:/nix/store/wkfisrs4rh8567qzmkarii2hd4h31hhm-elixir-1.16.2/bin:/nix/store/d9wnf8z9xpl90kghagl5jh3lncqc893q-gnumake-4.4.1/bin:/nix/store/7m6w5hxcfjkk7fc03crfza73f5nlk7ym-gcc-wrapper-12.3.0/bin:/nix/store/8xpnqiypkvdvfg5sy3ivh1qd0w605lgh-gcc-12.3.0/bin:/nix/store/7cifxhcdg7a6f0sj6fw68d97mqa6bkbb-coreutils-9.4/bin:/nix/store/7qlfn5m70sflgzi82vmri465bszirpr2-cctools-binutils-darwin-wrapper-16.0.6-973.0.1/bin:/nix/store/5rwj9a10f01jhfb8hbzizzhnmr55976p-cctools-binutils-darwin-16.0.6-973.0.1/bin:/nix/store/0jcghmfbj8diqjgwdqr7k883qj0aqnyp-openssl-3.0.13-bin/bin:/nix/store/wwrr3lii4bq1jq7f0m1fqzmhqan54nv9-postgresql-15.6/bin:/nix/store/24ljvc5iwbs01svv9s8zvfcl5qs876kp-clang-wrapper-16.0.6/bin:/nix/store/7pjm6a27mp71q9sm0gbip3ij0h5kh099-clang-16.0.6/bin:/nix/store/3j0f71qijrdylpqndvx5d15rj38famjd-cctools-binutils-darwin-wrapper-16.0.6-973.0.1/bin:/nix/store/7cifxhcdg7a6f0sj6fw68d97mqa6bkbb-coreutils-9.4/bin:/nix/store/mxvqp1mpk5a7n4k25pn000lribabn92k-findutils-4.9.0/bin:/nix/store/575sjnqgcparl0i5jp1h5glghg6c9wnw-diffutils-3.10/bin:/nix/store/051x0h9iyrbqibxn8nm2p88yasx8gz3b-gnused-4.9/bin:/nix/store/i93m7189qp888xfhcibfb7qs1ak184p6-gnugrep-3.11/bin:/nix/store/i4idzdx3w7cng03h362byhvsjcv6rnqm-gawk-5.2.2/bin:/nix/store/dzdai6qhgni7x5pzhf0dw05l79jaqlxj-gnutar-1.35/bin:/nix/store/vzxgdh6r14h41n86nscgagwmri8n0zb2-gzip-1.13/bin:/nix/store/31myqd4x8mp2gpjgf81g8h4k033rgww8-bzip2-1.0.8-bin/bin:/nix/store/d9wnf8z9xpl90kghagl5jh3lncqc893q-gnumake-4.4.1/bin:/nix/store/bsa1v1mr7c42a0yd90ncnchcs18ylm4b-bash-5.2p26/bin:/nix/store/9lrgbyjppdicfshvw6361aw2q61p5wzb-patch-2.7.6/bin:/nix/store/im2m6bwm98nr7qgpf7a1hfh655i8vgn2-xz-5.6.1-bin/bin:/nix/store/iam0z9had9ram6gv1xgyv9d936jpdb5n-file-5.45/bin:/Users/zoedsoupe/dev/andromeda/andromeda-fie/.direnv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Users/zoedsoupe/.nix-profile/bin:/etc/profiles/per-user/zoedsoupe/bin:/run/current-system/sw/bin
+
+
+18:57:00.877 [debug] handled notification client -> server initialized in 33ms
+
+18:57:00.881 [debug] handled notification client -> server textDocument/didOpen in 3ms
+
+18:57:01.894 [debug] sent notification server -> client window/logMessage
+
+18:57:01.895 [info] Connected to node nextls-runtime-1711922220876824875@Zoeys-MacBook-Air
+
+18:57:02.076 [debug] sent notification server -> client window/logMessage
+
+18:57:02.076 [info]      warning: got "@impl true" for function run/1 but no behaviour was declared
+     │
+ 262 │   def run(args) do
+     │   ~~~~~~~~~~~~~~~~
+     │
+     └─ /Users/zoedsoupe/Library/Application Support/.burrito/next_ls_erts-14.2.1_0.20.2/lib/next_ls-0.20.2/priv/monkey/_next_ls_private_compiler.ex:262: :_next_ls_private_formatter (module)
+
+
+
+18:57:02.077 [debug] sent notification server -> client $/progress
+
+18:57:02.078 [debug] sent notification server -> client window/logMessage
+
+18:57:02.079 id=68 [debug] sent request server -> client window/workDoneProgress/create
+
+18:57:02.079 [debug] sent notification server -> client $/progress
+
+18:57:02.128 [debug] sent notification server -> client window/logMessage
+
+18:57:02.128 [info] Compiling 1 file (.ex)
+
+
+18:57:02.135 id=100 [debug] sent request server -> client window/workDoneProgress/create
+
+18:57:02.135 [debug] sent notification server -> client $/progress
+
+18:57:02.187 [debug] sent notification server -> client $/progress
+
+18:57:02.187 [debug] sent notification server -> client window/logMessage
+
+18:57:02.187 [info] Compiled andromeda-fie!
+
+18:57:02.244 [debug] sent notification server -> client $/progress
+
+18:57:13.081 [debug] handled notification client -> server textDocument/didChange in 8ms
+
+18:57:13.744 [debug] handled notification client -> server textDocument/didChange in 250µs
+
+18:57:14.121 [debug] handled notification client -> server textDocument/didChange in 806µs
+
+18:57:14.225 [debug] handled notification client -> server textDocument/didChange in 619µs
+
+18:57:14.287 [debug] handled notification client -> server textDocument/didChange in 649µs
+
+18:57:14.334 [debug] handled notification client -> server textDocument/didChange in 858µs
+
+18:57:14.799 [debug] handled notification client -> server textDocument/didChange in 729µs
+
+18:57:14.942 [debug] handled notification client -> server textDocument/didChange in 587µs
+
+18:57:15.541 [debug] handled notification client -> server textDocument/didChange in 278µs
+
+18:57:15.753 [debug] handled notification client -> server textDocument/didChange in 321µs
+
+18:57:15.886 [debug] handled notification client -> server textDocument/didChange in 312µs
+
+18:57:16.077 [debug] handled notification client -> server textDocument/didChange in 565µs
+
+18:57:16.197 [debug] handled notification client -> server textDocument/didChange in 745µs
+
+18:57:16.394 [debug] handled notification client -> server textDocument/didChange in 616µs
+
+18:57:16.451 [debug] handled notification client -> server textDocument/didChange in 720µs
+
+18:57:16.784 [debug] handled notification client -> server textDocument/didChange in 324µs
+
+18:57:16.889 [debug] handled notification client -> server textDocument/didChange in 483µs
+
+18:57:17.212 [debug] handled notification client -> server textDocument/didChange in 502µs
+
+18:57:17.441 [debug] handled notification client -> server textDocument/didChange in 820µs
+
+18:57:17.530 [debug] handled notification client -> server textDocument/didChange in 718µs
+
+18:57:17.894 [debug] handled notification client -> server textDocument/didChange in 339µs
+
+18:57:18.232 [debug] handled notification client -> server textDocument/didChange in 470µs
+
+18:57:18.339 [debug] handled notification client -> server textDocument/didChange in 512µs
+
+18:57:18.380 [debug] handled notification client -> server textDocument/didChange in 571µs
+
+18:57:18.424 [debug] handled notification client -> server textDocument/didChange in 492µs
+
+18:57:21.024 id=132 [debug] sent request server -> client window/workDoneProgress/create
+
+18:57:21.024 [debug] handled notification client -> server textDocument/didSave in 2ms
+
+18:57:21.024 [debug] sent notification server -> client $/progress
+
+18:57:21.027 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 2ms
+
+18:57:21.052 [debug] sent notification server -> client window/logMessage
+
+18:57:21.053 [info] Compiling 7 files (.ex)
+
+
+18:57:21.054 id=355 [debug] sent request server -> client window/workDoneProgress/create
+
+18:57:21.055 [debug] sent notification server -> client $/progress
+
+18:57:21.201 [debug] sent notification server -> client $/progress
+
+18:57:21.201 [debug] sent notification server -> client window/logMessage
+
+18:57:21.201 [info] Compiled andromeda-fie!
+
+18:57:21.287 [debug] sent notification server -> client $/progress

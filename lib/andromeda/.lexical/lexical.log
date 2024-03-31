@@ -1,0 +1,498 @@
+18:56:22.835 [info] Child {LoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.118.0>
+Start Call: Logger.Backends.Watcher.start_link({{LoggerFileBackend, :general_log}, {LoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+18:56:22.835 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.117.0>
+Start Call: Logger.Backends.Supervisor.start_link([{LoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:56:22.835 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:56:22.835 [info] Application logger started at :nonode@nohost
+18:56:23.802 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.1440.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+18:56:23.802 [info] Application runtime_tools started at :nonode@nohost
+18:56:23.805 [info] Application erts started at :nonode@nohost
+18:56:23.805 [info] Application lx_lexical_shared started at :nonode@nohost
+18:56:23.805 [info] Child LXSnowflake.Generator of Supervisor #PID<0.1446.0> (Supervisor.Default) started
+Pid: #PID<0.1447.0>
+Start Call: LXSnowflake.Generator.start_link(1704070800000, 1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:23.805 [info] Application lx_snowflake started at :nonode@nohost
+18:56:23.806 [info] Application lx_sourceror started at :nonode@nohost
+18:56:23.806 [info] Application lx_common started at :nonode@nohost
+18:56:23.806 [info] Application lx_elixir_sense started at :nonode@nohost
+18:56:23.811 [info] Application jason started at :nonode@nohost
+18:56:23.811 [info] Application logger_file_backend started at :nonode@nohost
+18:56:23.811 [info] Application lx_path_glob started at :nonode@nohost
+18:56:23.811 [info] Application lx_proto started at :nonode@nohost
+18:56:23.811 [info] Application lx_protocol started at :nonode@nohost
+18:56:23.821 [info] Child LXical.Document.Store of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1460.0>
+Start Call: LXical.Document.Store.start_link([derive: [analysis: &LXical.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:23.823 [info] Child LXical.Server of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1461.0>
+Start Call: LXical.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:23.823 [info] Child LXical.Server.ProjectSupervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1462.0>
+Start Call: DynamicSupervisor.start_link([name: LXical.Server.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:56:23.823 [info] Child LXical.Server.Provider.Queue.Supervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1463.0>
+Start Call: Task.Supervisor.start_link([name: LXical.Server.Provider.Queue.Supervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:56:23.825 [info] Child LXical.Server.Provider.Queue of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1464.0>
+Start Call: LXical.Server.Provider.Queue.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:23.825 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1465.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:23.825 [info] Application lx_server started at :nonode@nohost
+18:56:23.835 [info] Starting project at uri file:///Users/zoedsoupe/dev/andromeda/andromeda-fie
+18:56:23.849 [info] Child {LXical.Server.Project.Progress, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1467.0>
+Start Call: LXical.Server.Project.Progress.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 17417, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:23.852 [info] Child {LXical.RemoteControl.ProjectNodeSupervisor, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1468.0>
+Start Call: LXical.RemoteControl.ProjectNodeSupervisor.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 17417, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:23.862 [info] Child :erl_epmd of Supervisor :net_sup started
+Pid: #PID<0.1471.0>
+Start Call: :erl_epmd.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+18:56:23.863 [info] Child :auth of Supervisor :net_sup started
+Pid: #PID<0.1472.0>
+Start Call: :auth.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+18:56:23.865 [info] Child :net_kernel of Supervisor :net_sup started
+Pid: #PID<0.1473.0>
+Start Call: :net_kernel.start_link(%{name: :"manager-andromeda_fie-17417@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+18:56:23.865 [info] Child :net_sup_dynamic of Supervisor :kernel_sup started
+Pid: #PID<0.1470.0>
+Start Call: :erl_distribution.start_link(%{name: :"manager-andromeda_fie-17417@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 1000
+Type: :supervisor
+18:56:24.898 [info] Child {LXical.Server.Project.Node, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1469.0>
+Start Call: LXical.Server.Project.Node.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 17417, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:24.901 [info] Child {LXical.Server.Project.Diagnostics, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1481.0>
+Start Call: LXical.Server.Project.Diagnostics.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 17417, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:24.904 [info] Child {LXical.Server.Project.Intelligence, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1482.0>
+Start Call: LXical.Server.Project.Intelligence.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 17417, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:24.905 [info] Child LXical.Server.Project.SearchListener of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1483.0>
+Start Call: LXical.Server.Project.SearchListener.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 17417, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:24.906 [info] Lexical Initialized
+18:56:24.906 [info] opened file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda/application.ex
+18:56:40.423 [info] Compiled andromeda_fie in 15.5 seconds
+18:56:52.035 [error] Shutting down
+18:56:52.035 [error] Received workspace/didChangeWatchedFiles after shutdown. Ignoring
+18:56:52.042 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor terminated
+** (exit) normal
+Pid: #PID<0.1465.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:52.042 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1484.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:52.042 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor terminated
+** (exit) normal
+Pid: #PID<0.1484.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:52.042 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1485.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:55.387 [info] Child {LoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.118.0>
+Start Call: Logger.Backends.Watcher.start_link({{LoggerFileBackend, :general_log}, {LoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+18:56:55.387 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.117.0>
+Start Call: Logger.Backends.Supervisor.start_link([{LoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:56:55.387 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:56:55.387 [info] Application logger started at :nonode@nohost
+18:56:56.321 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.1440.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+18:56:56.321 [info] Application runtime_tools started at :nonode@nohost
+18:56:56.323 [info] Application erts started at :nonode@nohost
+18:56:56.323 [info] Application lx_lexical_shared started at :nonode@nohost
+18:56:56.324 [info] Child LXSnowflake.Generator of Supervisor #PID<0.1446.0> (Supervisor.Default) started
+Pid: #PID<0.1447.0>
+Start Call: LXSnowflake.Generator.start_link(1704070800000, 1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.324 [info] Application lx_snowflake started at :nonode@nohost
+18:56:56.324 [info] Application lx_sourceror started at :nonode@nohost
+18:56:56.324 [info] Application lx_common started at :nonode@nohost
+18:56:56.324 [info] Application lx_elixir_sense started at :nonode@nohost
+18:56:56.330 [info] Application jason started at :nonode@nohost
+18:56:56.330 [info] Application logger_file_backend started at :nonode@nohost
+18:56:56.330 [info] Application lx_path_glob started at :nonode@nohost
+18:56:56.330 [info] Application lx_proto started at :nonode@nohost
+18:56:56.330 [info] Application lx_protocol started at :nonode@nohost
+18:56:56.340 [info] Child LXical.Document.Store of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1460.0>
+Start Call: LXical.Document.Store.start_link([derive: [analysis: &LXical.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.342 [info] Child LXical.Server of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1461.0>
+Start Call: LXical.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.343 [info] Child LXical.Server.ProjectSupervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1462.0>
+Start Call: DynamicSupervisor.start_link([name: LXical.Server.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:56:56.343 [info] Child LXical.Server.Provider.Queue.Supervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1463.0>
+Start Call: Task.Supervisor.start_link([name: LXical.Server.Provider.Queue.Supervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+18:56:56.344 [info] Child LXical.Server.Provider.Queue of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1464.0>
+Start Call: LXical.Server.Provider.Queue.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.344 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1465.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.344 [info] Application lx_server started at :nonode@nohost
+18:56:56.354 [info] Starting project at uri file:///Users/zoedsoupe/dev/andromeda/andromeda-fie
+18:56:56.366 [info] Child {LXical.Server.Project.Progress, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1467.0>
+Start Call: LXical.Server.Project.Progress.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 48040, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.370 [info] Child {LXical.RemoteControl.ProjectNodeSupervisor, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1468.0>
+Start Call: LXical.RemoteControl.ProjectNodeSupervisor.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 48040, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.380 [info] Child :erl_epmd of Supervisor :net_sup started
+Pid: #PID<0.1471.0>
+Start Call: :erl_epmd.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+18:56:56.381 [info] Child :auth of Supervisor :net_sup started
+Pid: #PID<0.1472.0>
+Start Call: :auth.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+18:56:56.383 [info] Child :net_kernel of Supervisor :net_sup started
+Pid: #PID<0.1473.0>
+Start Call: :net_kernel.start_link(%{name: :"manager-andromeda_fie-48040@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+18:56:56.383 [info] Child :net_sup_dynamic of Supervisor :kernel_sup started
+Pid: #PID<0.1470.0>
+Start Call: :erl_distribution.start_link(%{name: :"manager-andromeda_fie-48040@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 1000
+Type: :supervisor
+18:56:56.848 [info] Child {LXical.Server.Project.Node, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1469.0>
+Start Call: LXical.Server.Project.Node.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 48040, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.851 [info] Child {LXical.Server.Project.Diagnostics, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1481.0>
+Start Call: LXical.Server.Project.Diagnostics.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 48040, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.854 [info] Child {LXical.Server.Project.Intelligence, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1482.0>
+Start Call: LXical.Server.Project.Intelligence.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 48040, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.855 [info] Child LXical.Server.Project.SearchListener of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1483.0>
+Start Call: LXical.Server.Project.SearchListener.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 48040, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.855 [info] Lexical Initialized
+18:56:56.856 [info] opened file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda/repo.ex
+18:56:56.856 [error] Shutting down
+18:56:56.856 [warn] Received an Exit notification. Halting the server in 150ms
+18:56:56.856 [info] Child :timer_server of Supervisor :kernel_sup started
+Pid: #PID<0.1484.0>
+Start Call: :timer.start_link()
+Restart: :permanent
+Shutdown: 1000
+Type: :worker
+18:56:56.856 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor terminated
+** (exit) normal
+Pid: #PID<0.1465.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.856 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1485.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+18:56:56.858 [error] Child of Supervisor :standard_error_sup terminated
+** (exit) :epipe
+Pid: #PID<0.52.0>
+Start Module: :standard_error
+19:01:34.617 [info] Child {LoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.118.0>
+Start Call: Logger.Backends.Watcher.start_link({{LoggerFileBackend, :general_log}, {LoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+19:01:34.618 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.117.0>
+Start Call: Logger.Backends.Supervisor.start_link([{LoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+19:01:34.618 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+19:01:34.618 [info] Application logger started at :nonode@nohost
+19:01:35.546 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.1440.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+19:01:35.546 [info] Application runtime_tools started at :nonode@nohost
+19:01:35.549 [info] Application erts started at :nonode@nohost
+19:01:35.549 [info] Application lx_lexical_shared started at :nonode@nohost
+19:01:35.550 [info] Child LXSnowflake.Generator of Supervisor #PID<0.1446.0> (Supervisor.Default) started
+Pid: #PID<0.1447.0>
+Start Call: LXSnowflake.Generator.start_link(1704070800000, 1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:35.550 [info] Application lx_snowflake started at :nonode@nohost
+19:01:35.550 [info] Application lx_sourceror started at :nonode@nohost
+19:01:35.550 [info] Application lx_common started at :nonode@nohost
+19:01:35.550 [info] Application lx_elixir_sense started at :nonode@nohost
+19:01:35.555 [info] Application jason started at :nonode@nohost
+19:01:35.555 [info] Application logger_file_backend started at :nonode@nohost
+19:01:35.555 [info] Application lx_path_glob started at :nonode@nohost
+19:01:35.555 [info] Application lx_proto started at :nonode@nohost
+19:01:35.555 [info] Application lx_protocol started at :nonode@nohost
+19:01:35.565 [info] Child LXical.Document.Store of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1460.0>
+Start Call: LXical.Document.Store.start_link([derive: [analysis: &LXical.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:35.567 [info] Child LXical.Server of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1461.0>
+Start Call: LXical.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:35.567 [info] Child LXical.Server.ProjectSupervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1462.0>
+Start Call: DynamicSupervisor.start_link([name: LXical.Server.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+19:01:35.567 [info] Child LXical.Server.Provider.Queue.Supervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1463.0>
+Start Call: Task.Supervisor.start_link([name: LXical.Server.Provider.Queue.Supervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+19:01:35.569 [info] Child LXical.Server.Provider.Queue of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1464.0>
+Start Call: LXical.Server.Provider.Queue.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:35.569 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1465.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:35.569 [info] Application lx_server started at :nonode@nohost
+19:01:35.580 [info] Starting project at uri file:///Users/zoedsoupe/dev/andromeda/andromeda-fie
+19:01:35.592 [info] Child {LXical.Server.Project.Progress, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1467.0>
+Start Call: LXical.Server.Project.Progress.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 32365, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:35.595 [info] Child {LXical.RemoteControl.ProjectNodeSupervisor, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1468.0>
+Start Call: LXical.RemoteControl.ProjectNodeSupervisor.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 32365, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:35.605 [info] Child :erl_epmd of Supervisor :net_sup started
+Pid: #PID<0.1471.0>
+Start Call: :erl_epmd.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+19:01:35.606 [info] Child :auth of Supervisor :net_sup started
+Pid: #PID<0.1472.0>
+Start Call: :auth.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+19:01:35.608 [info] Child :net_kernel of Supervisor :net_sup started
+Pid: #PID<0.1473.0>
+Start Call: :net_kernel.start_link(%{name: :"manager-andromeda_fie-32365@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+19:01:35.608 [info] Child :net_sup_dynamic of Supervisor :kernel_sup started
+Pid: #PID<0.1470.0>
+Start Call: :erl_distribution.start_link(%{name: :"manager-andromeda_fie-32365@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 1000
+Type: :supervisor
+19:01:36.085 [info] Child {LXical.Server.Project.Node, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1469.0>
+Start Call: LXical.Server.Project.Node.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 32365, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:36.088 [info] Child {LXical.Server.Project.Diagnostics, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1481.0>
+Start Call: LXical.Server.Project.Diagnostics.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 32365, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:36.091 [info] Child {LXical.Server.Project.Intelligence, "andromeda_fie"} of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1482.0>
+Start Call: LXical.Server.Project.Intelligence.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 32365, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:36.092 [info] Child LXical.Server.Project.SearchListener of Supervisor :"andromeda_fie::supervisor" started
+Pid: #PID<0.1483.0>
+Start Call: LXical.Server.Project.SearchListener.start_link(%LXical.Project{root_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie", mix_exs_uri: "file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 32365, project_config: []})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:36.093 [info] Lexical Initialized
+19:01:36.093 [info] opened file:///Users/zoedsoupe/dev/andromeda/andromeda-fie/lib/andromeda/application.ex
+19:01:36.094 [error] Shutting down
+19:01:36.094 [error] Received workspace/didChangeWatchedFiles after shutdown. Ignoring
+19:01:36.095 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor terminated
+** (exit) normal
+Pid: #PID<0.1465.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+19:01:36.095 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1484.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
