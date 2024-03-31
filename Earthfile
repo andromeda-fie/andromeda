@@ -66,6 +66,7 @@ docker-dev:
   RUN mix deps.compile
   RUN mix compile
   CMD ["iex", "-S", "mix phx.server"]
+  ARG DATABASE_URL
   ARG GITHUB_REPO="andromeda-fie/contraktor"
   SAVE IMAGE --push ghcr.io/$GITHUB_REPO:dev
 

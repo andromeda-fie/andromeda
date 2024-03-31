@@ -31,4 +31,4 @@ jobs:
       - name: Earthly version
         run: earthly --version
       - name: Run test and build
-        run: earthly -P --build-arg GITHUB_REPO=${{ github.repository }} --push +docker
+        run: earthly -P --build-arg DATABASE_URL=${{ secrets.DATABASE_URL }} --build-arg GITHUB_REPO=${{ github.repository }} --push +docker
