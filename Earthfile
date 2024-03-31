@@ -32,6 +32,9 @@ ci:
 test:
   FROM +build
   RUN apk add postgresql-contrib
+  ENV DATABASE_USER=andromeda
+  ENV DATABASE_PASS=andromeda
+  ENV DATABASE_HOST=database
   COPY docker-compose.yml ./
   COPY --dir test ./
   COPY --dir scripts ./
