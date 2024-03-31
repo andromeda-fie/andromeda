@@ -34,7 +34,6 @@ test:
   RUN apk add postgresql-contrib
   ENV DATABASE_USER=andromeda
   ENV DATABASE_PASS=andromeda
-  ENV DATABASE_HOST=database
   COPY docker-compose.yml ./
   COPY --dir test ./
   COPY --dir scripts ./
@@ -47,7 +46,7 @@ release:
   FROM +test
   COPY rel rel
   RUN MIX_ENV=prod mix do compile, release
-  SAVE ARTIFACT /src/_build/prod/rel/contraktor AS LOCAL release
+  SAVE ARTIFACT /src/_build/prod/rel/andromeda AS LOCAL release
 
 docker-prod:
   FROM alpine:3.18.4
@@ -55,19 +54,19 @@ docker-prod:
   WORKDIR /app
   RUN chown nobody /app
   USER nobody
-  COPY --dir +release/contraktor .
-  CMD ["./contraktor/bin/server"]
-  ARG GITHUB_REPO="andromeda-fie/contraktor"
+  COPY --dir +release/andromeda .
+  CMD ["./andromeda/bin/server"]
+  ARG GITHUB_REPO="andromeda-fie/andromeda"
   SAVE IMAGE --push ghcr.io/$GITHUB_REPO:prod
 
 docker-dev:
   FROM +build
+  ARG DATABASE_URL
   ENV MIX_ENV=dev
   RUN mix deps.compile
-  RUN mix compile
+  RUN DATABASE_URL=$DATABASE_URL mix compile
   CMD ["iex", "-S", "mix phx.server"]
-  ARG DATABASE_URL
-  ARG GITHUB_REPO="andromeda-fie/contraktor"
+  ARG GITHUB_REPO="andromeda-fie/andromeda"
   SAVE IMAGE --push ghcr.io/$GITHUB_REPO:dev
 
 docker:
