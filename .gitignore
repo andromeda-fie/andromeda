@@ -40,3 +40,7 @@ result
 
 # Env files
 .env
+
+.elixir-tools/
+.lexical/
+.elixir-ls/
