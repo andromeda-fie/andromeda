@@ -8,9 +8,11 @@ defmodule Andromeda.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      Andromeda.Repo,
       {Phoenix.PubSub, name: Andromeda.PubSub},
-      AndromedaWeb.Endpoint
+      AndromedaWeb.Endpoint,
+      Andromeda.PathFinder.Planeta,
+      Andromeda.Astrolog.Piloto,
+      Andromeda.Astrolog.Localizacao,
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

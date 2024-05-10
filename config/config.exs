@@ -1,9 +1,5 @@
 import Config
 
-config :andromeda,
-  ecto_repos: [Andromeda.Repo],
-  generators: [timestamp_type: :utc_datetime]
-
 # Configures the endpoint
 config :andromeda, AndromedaWeb.Endpoint,
   url: [host: "localhost"],

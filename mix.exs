@@ -32,10 +32,8 @@ defmodule Andromeda.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:matcha, "~> 0.1"},
       {:phoenix, "~> 1.7.11"},
-      {:phoenix_ecto, "~> 4.4"},
-      {:ecto_sql, "~> 3.10"},
-      {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 4.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.20.2"},
@@ -57,15 +55,9 @@ defmodule Andromeda.MixProject do
   defp aliases do
     [
       setup: ["deps.get", "ecto.setup", "assets.setup", "assets.build"],
-      "ecto.setup": ["ecto.create", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "test"],
       "assets.setup": ["esbuild.install --if-missing"],
       "assets.build": ["esbuild andromeda"],
-      "assets.deploy": [
-        "esbuild andromeda --minify",
-        "phx.digest"
-      ]
+      "assets.deploy": ["esbuild andromeda --minify", "phx.digest"]
     ]
   end
 end
